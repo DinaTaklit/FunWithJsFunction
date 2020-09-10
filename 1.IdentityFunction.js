@@ -38,3 +38,19 @@ console.log(identity2(4));
  console.log(`add(3, 4)= ${add(3, 4)}`);
  console.log(`sub(3, 4)= ${sub(3, 4)}`);
  console.log(`mul(3, 4)= ${mul(3, 4)}`);
+
+  /**
+  * Write a function identityf that takes an argument
+  * and returns a function that returns that argument 
+  * var three = idetityf(3);
+  * three() // 3
+  * **/
+
+ function identityf(x){
+    return function(){
+        return x;
+    };
+}
+
+var three = identityf(3);
+console.log(`three() => ${three()}`);
