@@ -67,3 +67,26 @@ function addf (x){
 }
 
 console.log(`addf(3) (4) = ${addf(3) (4)}`);
+
+/** 
+ * Write a function liftf that takes a binary function,
+ * and makes it callable with two invocations
+ * var addf = liftf(add);
+ * addf(3) (4)  // 7
+ * liftf(mul) (5)(6) // 60
+ * 
+ * This is an example of high order function that receive other functions as parameters 
+ * and return other function as results
+ * **/
+
+
+function liftf(binary){
+    return function(x){
+        return function (y){
+            return binary(x, y);
+        };
+    };
+}
+var _addf = liftf(add);
+console.log(`_addf(3) (4) = ${_addf(3) (4)}`);
+console.log(`liftf(mul) (5)(6) = ${liftf(mul) (5)(6)}`);
