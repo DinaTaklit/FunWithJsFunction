@@ -54,3 +54,16 @@ console.log(identity2(4));
 
 var three = identityf(3);
 console.log(`three() => ${three()}`);
+
+/**
+ * Write a function addf that adds from two invocations
+ * addf(3) (4) // 7
+ * **/
+
+function addf (x){
+    return function(y){
+        return x + y;
+    };
+}
+
+console.log(`addf(3) (4) = ${addf(3) (4)}`);
